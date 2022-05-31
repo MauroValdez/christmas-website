@@ -1,6 +1,6 @@
-import './style.css'
+import './src/css/normalize.css';
+import './src/css/app.css';
 
-document.querySelector('#app').innerHTML = `
-  <h1>Hello Vite!</h1>
-  <a href="https://vitejs.dev/guide/features.html" target="_blank">Documentation</a>
-`
+import './src/js/scrollreveal.js';
+import './src/js/swiper.js';
+import './src/js/app.js';
