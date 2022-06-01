@@ -21,9 +21,9 @@
   --h1-font-size: 2.2rem;
   --h2-font-size: 1.8rem;
   --h3-font-size: 1.6rem;
-  --normal-font-size: 1.4rem;
-  --small-font-size: 1.2rem;
-  --smaller-font-size: 1rem;
+  --normal-font-size: 1.5rem;
+  --small-font-size: 1.4rem;
+  --smaller-font-size: 1.3rem;
 
   /** estilos **/
   --font-medium: 500;
@@ -111,9 +111,201 @@ button {
   margin-bottom:var(--mb-2-5);
   text-align: center;
 }
+.button {
+  display: inline-block;
+  background-color: var(--first-color);
+  color: #fff;
+  padding: 1.5rem 2.5rem;
+  font-weight: var(--font-medium);
+  border-radius: var(--smaller-font-size);
+  transition: .3s;
+}
+.button:hover {
+  background-color: var(--first-color-alt);
+}
 
+/** =------= Header =------= **/
+.header {
+  width: 100%;
+  background-color: var(--body-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+}
+.nav {
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav__logo, .nav__close, .nav__toggle {
+  color: var(--title-color);
+}
+.nav__logo {
+  display: flex;
+  align-items: center;
+  column-gap: .4rem;
+  font-weight: var(--font-medium);
+}
+.nav__logo-img {
+  width: 2.4rem;
+}
+.nav__toggle {
+  display: inline-flex;
+  font-size: 2rem;
+  cursor: pointer;
+}
+@media screen and (max-width: 767px) {
+  .nav__menu {
+    position: fixed;
+    background-color: var(--body-color);
+    top: -100%;
+    left: 0;
+    width: 100%;
+    padding: 6rem 0;
+    border-radius: 0 0 2rem 2rem;
+    box-shadow: 0 1px 4px hsla(0, 4%, 15%,.1);
+    transition: .4s;
+  }
+}
+.nav__img {
+  width: 10rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(-15deg);
+}
+.nav__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 2rem;
+}
+.nav__link {
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+  transition: .3s;
+}
+.nav__link:hover {
+  color: var(--first-color);
+}
+.nav__close {
+  font-size: 3.2rem;
+  position: absolute;
+  top: .8rem;
+  right: 1.6rem;
+  cursor: pointer;
+}
 
+.show-menu {
+  top: 0;
+}
 
+/** =------= Home =------= **/
+.home__conteiner {
+  padding-top: 3rem;
+  row-gap: 2.4rem;
+}
+.home__img {
+  width: 32rem;
+  justify-self: center;
+}
+.home__data {
+  text-align: center;
+}
+.home__title {
+  font-size: var(--biggest-font-size);
+  line-height: 140%;
+  margin-bottom: var(--mb-0-5);
+}
+.home__description {
+  font-size: var(--small-font-size);
+  padding:  0 3.2rem;
+  margin-bottom: var(--mb-2-5);
+}
+
+/** =------= Giving =------= **/
+.giving__container {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3.2rem 2rem;
+}
+.giving__content {
+  text-align: center;
+}
+.giving__img {
+  width: 10rem;
+  transition: .3s;
+}
+.giving__img:hover {
+  transform: translateY(-.5rem);
+}
+.giving__title {
+  font-size: var(--h3-font-size);
+  margin-bottom: var(--mb-0-25);
+}
+.giving__description {
+  font-size: var(--small-font-size);
+}
+
+.scroll-header {
+  box-shadow: 0 1px 4px hsla(0, 4%, 15%,.1);
+}
+
+/** =------= Celebrate =------= **/
+.celebrate__container {
+  row-gap: 1.6rem;
+}
+.celebrate__data {
+  text-align: center;
+}
+.celebrate__title {
+  margin-bottom: var(--mb-1-5);
+}
+.celebrate__description {
+  margin-bottom: var(--mb-2-5);
+}
+.celebrate__img {
+  width: 28rem;
+  justify-self: center;
+}
+
+/** =------= Gift =------= **/
+.gift__container {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.4rem;
+}
+.gift__card {
+  display: grid;
+  position: relative;
+  background-color: var(--conteiner-color);
+  box-shadow: 0 4px 16px hsla(355, 25%, 15%,.1);
+  padding: 2.4rem 1.6rem 1.6rem;
+  border-radius: 1.2rem;
+}
+.gift__img {
+  width: 10rem;
+  justify-self: center;
+  margin-bottom: var(--mb-0-25);
+  transition: .3s;
+}
+.gift__icon {
+  font-size: 2rem;
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
+  cursor: pointer;
+}
+.gift__price {
+  font-size: var(--h3-font-size);
+}
+.gift__title {
+  font-size: var(--smaller-font-size);
+  font-weight: var(--font-medium);
+}
+.gift__card:hover .gift__img {
+  transform: translateY(-.5rem);
+}
 
 
 
