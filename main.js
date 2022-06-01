@@ -1,3 +1,4 @@
+import './src/css/swiper.css';
 import './src/css/normalize.css';
 import './src/css/app.css';
 
