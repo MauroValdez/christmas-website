@@ -6,7 +6,7 @@
   --header-height: 5.5rem;
 
   /** colores **/
-  --first-color: hsl(355,70%,54%);
+  --first-color: hsl(355, 70%, 54%);
   --first-color-alt: hsl(355,66%,50%);
   --title-color: hsl(355,4%,15%);
   --text-color:hsl(355,4%,45%);
@@ -71,6 +71,7 @@ body {
   margin: var(--header-height) 0;
   background-color: var(--body-color);
   color: var(--text-color);
+  transition: .3s;
 }
 h1,h2,h3,h4 {
   color: var(--title-color);
@@ -78,6 +79,8 @@ h1,h2,h3,h4 {
 }
 ul {
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 img {
   max-width: 100%;
@@ -90,6 +93,47 @@ button {
   cursor: pointer;
   border: none;
   outline: none;
+}
+/** =------= theme =------= **/
+.nav__btns {
+  display: flex;
+  align-items: center;
+  column-gap: 1.6rem;
+}
+.change-theme {
+  display: flex;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/** =------= Dark-mode =------= **/
+body.dark-theme {
+  --title-color: hsl(355,4%,95%);
+  --text-color:hsl(355,4%,75%);
+  --body-color:hsl(355,20%,12%);
+  --conteiner-color:hsl(355,16%,16%);
+}
+.dark-theme box-icon {
+  fill: var(--title-color);
+}
+.dark-theme .scroll-header,
+.dark-theme .nav__menu {
+  box-shadow: 0 2px 4px hsla(0,0%,4%,.3);
+}
+.dark-theme .message__container {
+  background-color: var(--conteiner-color);
+}
+.dark-theme .message__input {
+  background-color: var(--body-color);
+}
+.dark-theme .message__button {
+  background-color: var(--first-color);
+}
+.dark-theme .message__button:hover {
+  background-color: var(--first-color-alt);
+}
+.dark-theme::-webkit-scrollbar {
+  background-color: hsl(353, 8%, 30%);
 }
 
 /** =------= reusable clases =------= **/
@@ -132,6 +176,7 @@ button {
   top: 0;
   left: 0;
   z-index: var(--z-fixed);
+  transition: .3s;
 }
 .nav {
   height: var(--header-height);
@@ -200,6 +245,10 @@ button {
 
 .show-menu {
   top: 0;
+}
+/** Scroll Activo **/
+.active-link {
+  color: var(--first-color);
 }
 
 /** =------= Home =------= **/
@@ -357,6 +406,7 @@ button {
 }
 
 /** swiper **/
+
 .swiper-pagination-bullet {
   background-color: var(--text-color);
 }
@@ -364,7 +414,334 @@ button {
   background-color: var(--first-color);
 }
 
+/** =------= Message =------= **/
+.message__container {
+  row-gap: 4rem;
+  background-color: var(--first-color);
+  padding: 4rem 2.4rem;
+}
+.message__form {
+  text-align: center;
+}
+.message__title {
+  color: #fff;
+  margin-bottom: var(--mb-1-5);
+}
+.message__input {
+  width: 100%;
+  background: #fff;
+  color: var(--text-color);
+  padding: 1.6rem 2.4rem;
+  border: none;
+  border-radius: 3rem;
+  outline: none;
+  margin-bottom: var(--mb-1);
+}
+.message__button {
+  background-color: var(--title-color);
+  border-radius: 3rem;
+  width: 100%;
+}
+.message__button:hover {
+  background-color: var(--title-color);
+}
+.message__img {
+  width: 20rem;
+  justify-self: center;
+  transform: rotate(15deg);
+}
 
+/** =------= Footer =------= **/
+.footer {
+  overflow: hidden;
+}
+.footer__container {
+  position: relative;
+  row-gap: 3.2rem;
+}
+.footer__logo {
+  display: flex;
+  align-items: center;
+  column-gap: .4rem;
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+}
+.footer__logo-img {
+  width: 2.2rem;
+}
+.footer__Description {
+  font-size: var(--small-font-size);
+}
+.footer__logo, .footer__title {
+  margin-bottom: var(--mb-1);
+}
+.footer__title {
+  font-size: var(--h3-font-size);
+}
+.footer__links, .footer__aviables {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.2rem;
+}
+.footer__link {
+  display: block;
+  margin: .8rem 0;
+  color: var(--text-color);
+  transition: .3s;
+}
+.footer__link:hover {
+  color: var(--title-color);
+}
+.footer__aviables-img {
+  width: 10rem;
+  cursor: pointer;
+}
+.footer__copy {
+  display: block;
+  margin: 5rem 0 1.6rem 0;
+  text-align: center;
+  font-size: var(--smaller-font-size);
+  color: var(--text-color-light);
+}
+.footer__img1, .footer__img2 {
+  position: absolute;
+  width: 10rem;
+}
+.footer__img1 {
+  top: 25%;
+  right: 3.2rem;
+}
+.footer__img2 {
+  top: 75%;
+  right: -6rem;
+}
 
+/** =------= Scrollup =------= **/
+.scrollup {
+  position: fixed;
+  right: 1.6rem;
+  bottom: -30%;
+  background-color: var(--conteiner-color);
+  box-shadow: 0 4px 12px hsla(0,0%,0%,.1);
+  display: inline-flex;
+  padding: .5rem;
+  border-radius: .4rem;
+  z-index: var(--z-tooltip);
+  opacity: .8;
+  transition: .4s;
+}
+.scrollup__icon {
+  font-size: 2rem;
+}
+.scrollup:hover {
+  opacity: 1;
+}
+.show-scroll{
+  bottom: 3rem;
+}
 
+/** =------= Scroll Bar =------= **/
+::-webkit-scrollbar {
+  width: .9rem;
+  background-color: hsl(353, 8%, 44%);
+  border-radius: 1.6rem;
+}
+::-webkit-scrollbar-thumb {
+  background-color: hsl(355, 32%, 17%);
+  border-radius: 1.6rem;
+}
 
+/** =------= Media Querys =------= **/
+@media screen and (max-width: 320px) {
+  .giving__container {
+    gap: 1.6rem;
+  }
+  .gift__container {
+    grid-template-columns: 16rem;
+    justify-content: center;
+  }
+}
+@media screen and (min-width: 576px) {
+  .home__description {
+    padding: 0 12rem;
+  }
+  .giving__container {
+    gap: 4rem 5.6rem;
+  }
+  .celebrate__description {
+    padding: 0 6.4rem;
+  }
+  .gift__container {
+    grid-template-columns: repeat(2, 18rem);
+    justify-content: center;
+    gap: 3.2rem;
+  }
+  .message__input, .message__button {
+    width: 60%;
+  }
+  .footer__container {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 4rem;
+  }
+  .footer__title {
+    margin-top: 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  .section {
+    padding: 10rem 0 3rem 0;
+  }
+  .nav {
+    height: calc(var(--header-height) + 2.4rem);
+    column-gap: 5rem;
+  }
+  .nav__toggle,
+  .nav__close,
+  .nav__img {
+    display: none;
+  }
+  .nav__menu {
+    margin-left: auto;
+  }
+  .nav__list {
+    flex-direction: row;
+    column-gap: 4rem;
+  }
+  .dark-theme .nav__menu {
+    box-shadow: none;
+  }
+  .home__conteiner,
+  .celebrate__container {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    padding-top: 6rem;
+  }
+  .home__data {
+    text-align: initial;
+  }
+  .home__description {
+    padding: 0;
+    margin-top: 3rem;
+  }
+  .giving__container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
+  .celebrate__container {
+    padding: 0;
+  }
+  .celebrate__data,
+  .celebrate__title {
+    text-align: initial;
+  }
+  .celebrate__description {
+    padding: 0;
+  }
+  .gift__container {
+    grid-template-columns: repeat(3, 20rem);
+    gap: 3rem;
+  }
+  .message__container {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 3rem;
+  }
+  .message__input,
+  .message__button {
+    width: 70%;
+  }
+  .footer__container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (min-width: 996px) {
+  .home__conteiner {
+    column-gap: 1.6rem;
+  }
+  .home__img {
+    width: 45rem;
+  }
+  .home__description {
+    padding-right: 12rem;
+  }
+  .giving__container {
+    column-gap: 12rem;
+    padding-top: 3.2rem;
+  }
+  .giving__img {
+    width: 15rem;
+  }
+  .celebrate__img {
+    width: 40rem;
+  }
+  .celebrate__description {
+    padding-right: 11rem;
+  }
+  .gift__container {
+    padding-top: 3.2rem;
+  }
+  .gift__card {
+    padding: 3.2rem 2.4rem 2.4rem;
+  }
+  .gift__img {
+    width: 15rem;
+    margin-bottom: var(--mb-1);
+  }
+  .gift__title {
+    font-size: var(--big-font-size);
+  }
+  .new__container {
+    padding-top: 3.2rem;
+  }
+  .new__card {
+    margin-bottom: 8rem;
+  }
+  .new__price {
+    font-size: var(--h3-font-size);
+  }
+  .message__container {
+    padding: 5.6rem 0;
+    grid-template-columns: repeat(2 , max-content);
+    column-gap: 6.4rem;
+    justify-content: center;
+    border-radius: 3rem;
+  }
+  .message__form {
+    text-align: initial;
+  }
+  .message__title {
+    font-size: var(--h1-font-size);
+  }
+  .message__input {
+    display: block;
+    width: 28rem;
+  }
+  .message__button {
+    width: initial;
+  }
+  .message__img {
+    width: 32rem;
+  }
+  .footer__container {
+    grid-template-columns: repeat(4, max-content);
+    justify-content: space-between;
+  }
+  .footer__copy {
+    margin-top: 9rem;
+  }
+  .footer__img1,
+  .footer__img2 {
+    width: 12rem;
+  }
+  .footer__img1 {
+    top: 100%;
+    left: 0;
+  }
+  .footer__img2 {
+    top: 40%;
+    right: -11rem;
+  }
+  .scrollup {
+    right: 5rem;
+  }
+}
