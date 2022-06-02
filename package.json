@@ -2,6 +2,7 @@
   "name": "2--christmas-website",
   "private": true,
   "version": "0.0.0",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -9,5 +10,12 @@
   },
   "devDependencies": {
     "vite": "^2.9.9"
+  },
+  "dependencies": {
+    "boxicons": "^2.1.2",
+    "imagemin": "^8.0.1",
+    "imagemin-webp": "^7.0.0",
+    "scrollreveal": "^4.0.9",
+    "swiper": "^8.2.1"
   }
 }
