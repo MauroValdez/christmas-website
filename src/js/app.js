@@ -3,8 +3,8 @@ import ScrollReveal from 'scrollreveal'
 
 import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
-// variables
 
+// variables
 const navMenu = document.querySelector("#nav-menu");
 const navToggle = document.querySelector("#nav-toggle");
 const navClose = document.querySelector("#nav-close");
@@ -125,12 +125,11 @@ function revealEfect() {
   distance: '60px',
   duration: 2500,
   delay: 400,
-  reset: true
+  //reset: true
 
 })
 
-sr.reveal('.home__img, .new__container, .footer__container');
-sr.reveal('.home__data', {delay: 500});
+sr.reveal('.home__img, .new__container, .footer__container, .home__data');
 sr.reveal('.giving__container, .gift__card', {interval: 100});
 sr.reveal('.celebrate__data, .message__form, .footer__img1', {origin: 'left'});
 sr.reveal('.celebrate__img, .message__img, .footer__img2', {origin: 'right'});
@@ -150,9 +149,6 @@ function swiperF() {
     breakpoints: {
       992: {
         spaceBetween: 60,
-      },
-      1024: {
-        spaceBetween: 70,
       }
     },
   });
